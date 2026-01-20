@@ -45,7 +45,7 @@ body {
     bottom: 0;
     left: 0;
     width: 100vw;
-    height: 35vh;
+    height: 20vh;
     background: linear-gradient(to top, #2d5016 0%, #3a6b1f 30%, #4a7c2a 60%, #5a8f35 100%);
     z-index: 2;
 }
@@ -55,7 +55,7 @@ body {
     bottom: 0;
     left: 0;
     width: 100vw;
-    height: 20vh;
+    height: 12vh;
     z-index: 3;
     overflow: hidden;
 }
@@ -155,7 +155,59 @@ body {
 
 /* Estrellas fugaces - Ocultas en móvil */
 .shooting-star {
+    position: fixed;
+    width: 2px;
+    height: 2px;
+    background: white;
+    border-radius: 50%;
+    box-shadow: 0 0 10px white;
+    z-index: 2;
     display: none;
+}
+
+.shooting-star::before {
+    content: '';
+    position: absolute;
+    width: 200px;
+    height: 1px;
+    background: linear-gradient(90deg, white, transparent);
+    top: 0;
+    left: 0;
+}
+
+.star1 {
+    top: 10%;
+    left: -200px;
+    animation: shooting 4s infinite;
+}
+
+.star2 {
+    top: 30%;
+    left: -200px;
+    animation: shooting 5s infinite 1.5s;
+}
+
+.star3 {
+    top: 60%;
+    left: -200px;
+    animation: shooting 6s infinite 3s;
+}
+
+@keyframes shooting {
+    0% {
+        transform: translateX(0) translateY(0);
+        opacity: 0;
+    }
+    10% {
+        opacity: 1;
+    }
+    90% {
+        opacity: 1;
+    }
+    100% {
+        transform: translateX(calc(100vw + 200px)) translateY(100px);
+        opacity: 0;
+    }
 }
 
 /* Girasoles - Flexbox puro */
@@ -174,21 +226,12 @@ body {
     height: 100vh;
     z-index: 4;
     pointer-events: none;
-    display: flex;
-    align-items: flex-end;
-    justify-content: space-around;
-    padding: 0 2vw;
 }
 
 .sunflower {
-    position: relative;
-    flex: 0 0 auto;
-    display: flex;
-    align-items: flex-end;
-    justify-content: center;
-    height: 100%;
-    width: auto;
-    transform: scale(0.3);
+    position: absolute;
+    bottom: 0;
+    transform: scale(0.4);
 }
 
 .sunflower--1 { animation: moving-flower-1 4s linear infinite; }
@@ -198,70 +241,94 @@ body {
 .sunflower--5 { animation: moving-flower-5 4.8s linear infinite; animation-delay: 2s; }
 .sunflower--6 { animation: moving-flower-6 5.2s linear infinite; animation-delay: 2.5s; }
 
+.sunflower--1 {
+    left: 5%;
+    animation: moving-flower-1 4s linear infinite;
+}
+
+.sunflower--2 {
+    left: 20%;
+    animation: moving-flower-2 4.5s linear infinite;
+    animation-delay: 0.5s;
+}
+
+.sunflower--3 {
+    left: 40%;
+    animation: moving-flower-3 5s linear infinite;
+    animation-delay: 1s;
+}
+
+.sunflower--4 {
+    left: 60%;
+    animation: moving-flower-4 4.2s linear infinite;
+    animation-delay: 1.5s;
+}
+
+.sunflower--5 {
+    left: 75%;
+    animation: moving-flower-5 4.8s linear infinite;
+    animation-delay: 2s;
+}
+
+.sunflower--6 {
+    left: 90%;
+    animation: moving-flower-6 5.2s linear infinite;
+    animation-delay: 2.5s;
+}
+
 @keyframes moving-flower-1 {
-    0%, 100% { transform: scale(0.3) rotate(-3deg) translateY(0); }
-    50% { transform: scale(0.3) rotate(3deg) translateY(-5px); }
+    0%, 100% { transform: scale(0.4) rotate(-3deg) translateY(0); }
+    50% { transform: scale(0.4) rotate(3deg) translateY(-5px); }
 }
 
 @keyframes moving-flower-2 {
-    0%, 100% { transform: scale(0.3) rotate(-4deg) translateY(0); }
-    50% { transform: scale(0.3) rotate(4deg) translateY(-6px); }
+    0%, 100% { transform: scale(0.4) rotate(-4deg) translateY(0); }
+    50% { transform: scale(0.4) rotate(4deg) translateY(-6px); }
 }
 
 @keyframes moving-flower-3 {
-    0%, 100% { transform: scale(0.3) rotate(-2deg) translateY(0); }
-    50% { transform: scale(0.3) rotate(2deg) translateY(-4px); }
+    0%, 100% { transform: scale(0.4) rotate(-2deg) translateY(0); }
+    50% { transform: scale(0.4) rotate(2deg) translateY(-4px); }
 }
 
 @keyframes moving-flower-4 {
-    0%, 100% { transform: scale(0.3) rotate(-3.5deg) translateY(0); }
-    50% { transform: scale(0.3) rotate(3.5deg) translateY(-7px); }
+    0%, 100% { transform: scale(0.4) rotate(-3.5deg) translateY(0); }
+    50% { transform: scale(0.4) rotate(3.5deg) translateY(-7px); }
 }
 
 @keyframes moving-flower-5 {
-    0%, 100% { transform: scale(0.3) rotate(-2.5deg) translateY(0); }
-    50% { transform: scale(0.3) rotate(2.5deg) translateY(-5px); }
+    0%, 100% { transform: scale(0.4) rotate(-2.5deg) translateY(0); }
+    50% { transform: scale(0.4) rotate(2.5deg) translateY(-5px); }
 }
 
 @keyframes moving-flower-6 {
-    0%, 100% { transform: scale(0.3) rotate(-3deg) translateY(0); }
-    50% { transform: scale(0.3) rotate(3deg) translateY(-6px); }
+    0%, 100% { transform: scale(0.4) rotate(-3deg) translateY(0); }
+    50% { transform: scale(0.4) rotate(3deg) translateY(-6px); }
 }
 
 .flower_wrapper {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-end;
-    height: 100%;
-    width: 100%;
+    position: absolute;
+    left: 50%;
+    bottom: 2vmin;
+    transform: translateX(-50%);
 }
 
 .flower_stem {
     width: 2vmin;
-    min-width: 6px;
-    max-width: 10px;
-    height: auto;
-    flex: 1 1 auto;
-    min-height: 100px;
-    max-height: 150px;
+    height: 65vmin;
     background-image: var(--line-color);
     border-radius: 4vmin;
     animation-delay: 0.3s;
-    align-self: center;
 }
 
 .flower_center {
     position: absolute;
-    top: 0;
+    top: 0vmin;
     left: 50%;
     z-index: 5;
     transform: translateX(-50%) rotate(-10deg);
-    width: 10vmin;
-    max-width: 70px;
-    height: 10vmin;
-    max-height: 70px;
+    width: 20vmin;
+    height: 20vmin;
     border-radius: 50%;
     background: var(--flower-center);
     animation: open-flower-middle 2s 0.4s backwards;
@@ -271,13 +338,10 @@ body {
     position: absolute;
     left: 50%;
     z-index: 3;
-    bottom: 12vmin;
-    max-bottom: 120px;
+    bottom: 55vmin;
     transform: translateX(-50%);
-    width: 3.5vmin;
-    max-width: 25px;
-    height: 10vmin;
-    max-height: 70px;
+    width: 7vmin;
+    height: 20vmin;
     background: var(--petal-color);
     clip-path: ellipse(50% 50% at 50% 50%);
     transform-origin: center bottom;
@@ -306,13 +370,10 @@ body {
 .flower_leaf {
     position: absolute;
     left: 60%;
-    bottom: 10vmin;
-    max-bottom: 100px;
+    bottom: 18vmin;
     transform: translateX(-45%) rotate(80deg);
-    width: 4vmin;
-    max-width: 28px;
-    height: 10vmin;
-    max-height: 70px;
+    width: 7vmin;
+    height: 17vmin;
     background: var(--leaf-color);
     clip-path: none;
     border-radius: 10vmin 2vmin 10vmin 2vmin;
@@ -320,18 +381,18 @@ body {
 }
 
 .flower_leaf-1 {
-    bottom: 10vmin;
+    bottom: 18vmin;
     transform: translateX(-45%) rotate(80deg);
 }
 
 .flower_leaf-2 {
-    bottom: 12vmin;
+    bottom: 23vmin;
     transform: translateX(-55%) rotate(-80deg);
 }
 
 .flower_light {
     position: absolute;
-    bottom: 50vmin;
+    bottom: 70vmin;
     width: 1vmin;
     height: 1vmin;
     background-color: rgb(255, 251, 0);

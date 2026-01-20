@@ -6,11 +6,14 @@
 
 body {
     font-family: 'Georgia', serif;
-    overflow-x: hidden;
-    overflow-y: auto;
+    overflow: hidden;
     height: 100vh;
-    position: relative;
-    -webkit-overflow-scrolling: touch;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    margin: 0;
+    padding: 0;
 }
 
 .container {
@@ -21,6 +24,7 @@ body {
     align-items: center;
     position: relative;
     overflow: hidden;
+    flex-shrink: 0;
 }
 
 /* Cielo nocturno */
@@ -669,7 +673,7 @@ body {
 
 .sunflower {
     position: absolute;
-    bottom: 0;
+    bottom: 15%;
 }
 
 .sunflower--1 {
@@ -764,7 +768,7 @@ body {
 .flower_wrapper {
     position: absolute;
     left: 50%;
-    bottom: 2vmin;
+    bottom: 15%;
     transform: translateX(-50%);
 }
 
@@ -2121,10 +2125,12 @@ body {
     /* Ajustes para flores en móvil */
     .sunflower {
         transform: scale(0.7);
+        bottom: 12%;
     }
     
     .flower_wrapper {
         transform: translateX(-50%) scale(0.7);
+        bottom: 12%;
     }
     
     .ground {
@@ -2161,6 +2167,14 @@ body {
     .container {
         height: 100vh;
         padding: 0;
+        flex-shrink: 0;
+    }
+    
+    body {
+        overflow: hidden;
+        height: 100vh;
+        width: 100%;
+        position: fixed;
     }
 }
 
@@ -2243,10 +2257,23 @@ body {
     /* Flores más pequeñas en móviles pequeños */
     .sunflower {
         transform: scale(0.5);
+        bottom: 10%;
     }
     
     .flower_wrapper {
         transform: translateX(-50%) scale(0.5);
+        bottom: 10%;
+    }
+    
+    body {
+        overflow: hidden;
+        height: 100vh;
+        width: 100%;
+        position: fixed;
+    }
+    
+    .container {
+        flex-shrink: 0;
     }
     
     .ground {

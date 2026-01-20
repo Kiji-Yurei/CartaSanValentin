@@ -14,10 +14,7 @@ cardClosed.addEventListener('click', () => {
     cardClosed.style.display = 'none';
     cardOverlay.style.display = 'block';
     cardOpen.style.display = 'block';
-    document.body.style.overflow = 'hidden';
-    document.body.style.height = '100vh';
-    document.body.style.position = 'fixed';
-    document.body.style.width = '100%';
+    // El body ya está con overflow: hidden por defecto, solo permitimos scroll en la carta
     setTimeout(() => {
         if (editableText && editableText.hasAttribute('contenteditable')) {
             editableText.focus();
@@ -30,10 +27,7 @@ function closeCard() {
     cardOpen.style.display = 'none';
     cardOverlay.style.display = 'none';
     cardClosed.style.display = 'block';
-    document.body.style.overflow = '';
-    document.body.style.height = '';
-    document.body.style.position = '';
-    document.body.style.width = '';
+    // El body mantiene overflow: hidden por defecto
 }
 
 closeBtn.addEventListener('click', (e) => {

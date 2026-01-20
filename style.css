@@ -6,19 +6,22 @@
 
 body {
     font-family: 'Georgia', serif;
-    overflow: hidden;
-    height: 100vh;
+    overflow-x: hidden;
+    overflow-y: auto;
+    min-height: 100vh;
     position: relative;
+    -webkit-overflow-scrolling: touch;
 }
 
 .container {
     width: 100%;
-    height: 100vh;
+    min-height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
     position: relative;
-    overflow: hidden;
+    overflow-x: hidden;
+    padding: 20px 0;
 }
 
 /* Cielo nocturno */
@@ -1481,7 +1484,10 @@ body {
     background: rgba(0, 0, 0, 0.6);
     z-index: 199;
     backdrop-filter: blur(3px);
+    -webkit-backdrop-filter: blur(3px);
     animation: fadeIn 0.3s ease-out;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
 }
 
 @keyframes fadeIn {
@@ -1960,49 +1966,73 @@ body {
     transform: scale(1.05);
 }
 
-/* Responsive */
-@media (max-width: 768px) {
+/* Responsive - Tablets y móviles grandes */
+@media (max-width: 1024px) {
     .card-closed {
-        width: 85%;
-        height: 280px;
+        width: 70%;
+        max-width: 450px;
     }
     
-    .card-open {
-        width: 95%;
-        max-height: 85vh;
-        top: 50%;
-        left: 50%;
-    }
-    
-    .close-btn {
-        top: 3%;
-        right: 3%;
-        width: 40px;
-        height: 40px;
-        font-size: 1.5rem;
+    .content-row {
+        gap: 15px;
     }
     
     .letter-paper {
-        padding: 30px 20px;
-        min-height: 500px;
+        padding: 40px 30px;
+    }
+}
+
+/* Responsive - Móviles */
+@media (max-width: 768px) {
+    .card-closed {
+        width: 90%;
+        max-width: 400px;
+        height: 250px;
+    }
+    
+    .card-open {
+        width: 98%;
+        max-width: 100%;
+        max-height: 90vh;
+        top: 50%;
+        left: 50%;
+        padding: 10px;
+    }
+    
+    .close-btn {
+        top: 2%;
+        right: 2%;
+        width: 35px;
+        height: 35px;
+        font-size: 1.3rem;
+        z-index: 1001;
+    }
+    
+    .letter-paper {
+        padding: 25px 15px;
+        min-height: auto;
     }
     
     .letter-paper::before {
-        left: 40px;
+        left: 20px;
+        width: 2px;
     }
     
     .letter-title h1 {
-        font-size: 2rem;
+        font-size: 1.8rem;
+        margin-bottom: 20px;
     }
     
     .images-section {
         grid-template-columns: 1fr;
-        gap: 20px;
+        gap: 15px;
+        margin: 20px 0;
     }
     
     .content-row {
         grid-template-columns: 1fr !important;
-        gap: 20px;
+        gap: 15px;
+        margin: 20px 0;
     }
     
     .content-row--text-image {
@@ -2014,27 +2044,210 @@ body {
     }
     
     .message-box {
-        padding: 20px;
+        padding: 15px;
+        min-height: auto;
     }
     
     .image-box--side,
     .message-box--side {
-        min-height: 180px;
+        min-height: 150px;
     }
     
-    .flower {
-        transform: scale(0.8);
+    .message-box--dedication {
+        min-height: 100px;
+        margin-top: 20px;
     }
     
-    .flower--1 {
-        left: 2%;
+    .editable-text {
+        font-size: 0.95rem;
+        padding: 10px;
+        min-height: 80px;
     }
     
-    .flower--2 {
-        left: 48%;
+    .editable-text--poem {
+        font-size: 0.9rem;
+        min-height: 120px;
     }
     
-    .flower--3 {
-        right: 2%;
+    .editable-text--dedication {
+        font-size: 1rem;
+        min-height: 80px;
+    }
+    
+    .upload-label {
+        padding: 15px;
+        font-size: 0.9rem;
+    }
+    
+    .upload-text {
+        font-size: 0.85rem;
+    }
+    
+    .box-decoration {
+        font-size: 1rem;
+    }
+    
+    .paper-decoration {
+        margin: 15px 0;
+    }
+    
+    .decoration-heart {
+        font-size: 1.2rem;
+    }
+    
+    /* Ajustes para flores en móvil */
+    .sunflower {
+        transform: scale(0.7);
+    }
+    
+    .flower_wrapper {
+        transform: translateX(-50%) scale(0.7);
+    }
+    
+    .ground {
+        height: 20%;
+    }
+    
+    .grass-container {
+        height: 12%;
+    }
+    
+    .grass-blade {
+        width: 3px;
+    }
+    
+    .grass-blade--1,
+    .grass-blade--2,
+    .grass-blade--3 {
+        height: 30px;
+    }
+    
+    .card-overlay {
+        padding: 10px;
+    }
+    
+    .shooting-star {
+        display: none; /* Ocultar estrellas fugaces en móvil para mejor rendimiento */
+    }
+}
+
+/* Responsive - Móviles pequeños */
+@media (max-width: 480px) {
+    .card-closed {
+        width: 95%;
+        height: 220px;
+    }
+    
+    .card-open {
+        width: 100%;
+        padding: 5px;
+    }
+    
+    .close-btn {
+        top: 1%;
+        right: 1%;
+        width: 30px;
+        height: 30px;
+        font-size: 1.1rem;
+    }
+    
+    .letter-paper {
+        padding: 20px 10px;
+    }
+    
+    .letter-title h1 {
+        font-size: 1.5rem;
+        margin-bottom: 15px;
+    }
+    
+    .message-box {
+        padding: 12px;
+    }
+    
+    .image-box--side,
+    .message-box--side {
+        min-height: 120px;
+    }
+    
+    .editable-text {
+        font-size: 0.85rem;
+        padding: 8px;
+        min-height: 60px;
+    }
+    
+    .editable-text--poem {
+        font-size: 0.8rem;
+        min-height: 100px;
+    }
+    
+    .upload-label {
+        padding: 12px;
+        font-size: 0.8rem;
+    }
+    
+    .upload-text {
+        font-size: 0.75rem;
+    }
+    
+    .box-decoration {
+        font-size: 0.9rem;
+    }
+    
+    /* Flores más pequeñas en móviles pequeños */
+    .sunflower {
+        transform: scale(0.5);
+    }
+    
+    .flower_wrapper {
+        transform: translateX(-50%) scale(0.5);
+    }
+    
+    .ground {
+        height: 18%;
+    }
+    
+    .grass-container {
+        height: 10%;
+    }
+    
+    .grass-blade {
+        width: 2px;
+    }
+}
+
+/* Responsive - Orientación horizontal en móviles */
+@media (max-width: 768px) and (orientation: landscape) {
+    .card-open {
+        max-height: 95vh;
+    }
+    
+    .letter-paper {
+        padding: 20px 15px;
+    }
+    
+    .content-row {
+        grid-template-columns: 1fr 1fr !important;
+        gap: 10px;
+    }
+    
+    .image-box--side,
+    .message-box--side {
+        min-height: 100px;
+    }
+}
+
+/* Ajustes para pantallas muy grandes */
+@media (min-width: 1920px) {
+    .card-closed {
+        width: 500px;
+        height: 360px;
+    }
+    
+    .card-open {
+        max-width: 1200px;
+    }
+    
+    .letter-paper {
+        padding: 60px 50px;
     }
 }

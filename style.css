@@ -2132,46 +2132,66 @@ body {
     
     /* Ajustes para flores en móvil */
     .sunflower {
-        transform: scale(0.5);
-        bottom: 20%;
+        transform: scale(0.4);
+        bottom: 25%;
     }
     
+    .sunflower--1 { left: 5%; }
+    .sunflower--2 { left: 20%; }
+    .sunflower--3 { left: 40%; }
+    .sunflower--4 { left: 60%; }
+    .sunflower--5 { left: 75%; }
+    .sunflower--6 { left: 90%; }
+    
     .flower_wrapper {
-        transform: translateX(-50%) scale(0.5);
-        bottom: 20%;
+        transform: translateX(-50%) scale(0.4);
+        bottom: 25%;
     }
     
     .flower_stem {
-        height: 25vmin;
-        max-height: 200px;
+        height: 20vmin !important;
+        max-height: 180px !important;
     }
     
     .flower_petal {
-        bottom: 20vmin;
-        width: 5vmin;
-        max-width: 35px;
-        height: 15vmin;
-        max-height: 110px;
+        bottom: 15vmin !important;
+        width: 4vmin !important;
+        max-width: 30px !important;
+        height: 12vmin !important;
+        max-height: 90px !important;
     }
     
     .flower_center {
-        width: 15vmin;
-        max-width: 100px;
-        height: 15vmin;
-        max-height: 100px;
+        width: 12vmin !important;
+        max-width: 85px !important;
+        height: 12vmin !important;
+        max-height: 85px !important;
+    }
+    
+    .flower_leaf {
+        bottom: 12vmin !important;
+        width: 5vmin !important;
+        max-width: 35px !important;
+        height: 12vmin !important;
+        max-height: 90px !important;
     }
     
     .ground {
-        height: 25%;
+        height: 30%;
     }
     
     .grass-container {
-        height: 15%;
+        height: 18%;
     }
     
     .sunflowers {
         height: 100vh;
         overflow: visible;
+    }
+    
+    .card-closed {
+        z-index: 101;
+        position: relative;
     }
     
     .grass-blade {

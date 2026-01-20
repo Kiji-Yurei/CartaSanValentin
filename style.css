@@ -674,6 +674,7 @@ body {
 .sunflower {
     position: absolute;
     bottom: 15%;
+    max-height: 85vh;
 }
 
 .sunflower--1 {
@@ -770,11 +771,14 @@ body {
     left: 50%;
     bottom: 15%;
     transform: translateX(-50%);
+    max-height: 85vh;
+    overflow: visible;
 }
 
 .flower_stem {
     width: 2vmin;
-    height: 65vmin;
+    height: 50vmin;
+    max-height: 400px;
     background-image: var(--line-color);
     border-radius: 4vmin;
     animation-delay: 0.3s;
@@ -797,10 +801,12 @@ body {
     position: absolute;
     left: 50%;
     z-index: 3;
-    bottom: 55vmin;
+    bottom: 45vmin;
     transform: translateX(-50%);
     width: 7vmin;
+    max-width: 50px;
     height: 20vmin;
+    max-height: 150px;
     background: var(--petal-color);
     clip-path: ellipse(50% 50% at 50% 50%);
     transform-origin: center bottom;
@@ -861,10 +867,12 @@ body {
 .flower_leaf {
     position: absolute;
     left: 60%;
-    bottom: 18vmin;
+    bottom: 15vmin;
     transform: translateX(-45%) rotate(80deg);
     width: 7vmin;
+    max-width: 50px;
     height: 17vmin;
+    max-height: 120px;
     background: var(--leaf-color);
     clip-path: none;
     border-radius: 10vmin 2vmin 10vmin 2vmin;
@@ -2124,21 +2132,46 @@ body {
     
     /* Ajustes para flores en móvil */
     .sunflower {
-        transform: scale(0.7);
-        bottom: 12%;
+        transform: scale(0.5);
+        bottom: 20%;
     }
     
     .flower_wrapper {
-        transform: translateX(-50%) scale(0.7);
-        bottom: 12%;
+        transform: translateX(-50%) scale(0.5);
+        bottom: 20%;
+    }
+    
+    .flower_stem {
+        height: 25vmin;
+        max-height: 200px;
+    }
+    
+    .flower_petal {
+        bottom: 20vmin;
+        width: 5vmin;
+        max-width: 35px;
+        height: 15vmin;
+        max-height: 110px;
+    }
+    
+    .flower_center {
+        width: 15vmin;
+        max-width: 100px;
+        height: 15vmin;
+        max-height: 100px;
     }
     
     .ground {
-        height: 20%;
+        height: 25%;
     }
     
     .grass-container {
-        height: 12%;
+        height: 15%;
+    }
+    
+    .sunflowers {
+        height: 100vh;
+        overflow: visible;
     }
     
     .grass-blade {
@@ -2256,13 +2289,18 @@ body {
     
     /* Flores más pequeñas en móviles pequeños */
     .sunflower {
-        transform: scale(0.5);
-        bottom: 10%;
+        transform: scale(0.4);
+        bottom: 22%;
     }
     
     .flower_wrapper {
-        transform: translateX(-50%) scale(0.5);
-        bottom: 10%;
+        transform: translateX(-50%) scale(0.4);
+        bottom: 22%;
+    }
+    
+    .flower_stem {
+        height: 25vmin;
+        max-height: 200px;
     }
     
     body {
@@ -2277,11 +2315,16 @@ body {
     }
     
     .ground {
-        height: 18%;
+        height: 25%;
     }
     
     .grass-container {
-        height: 10%;
+        height: 15%;
+    }
+    
+    .sunflowers {
+        height: 100vh;
+        overflow: visible;
     }
     
     .grass-blade {

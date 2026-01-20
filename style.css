@@ -45,7 +45,7 @@ body {
     bottom: 0;
     left: 0;
     width: 100vw;
-    height: 15vh;
+    height: 12vh;
     background: linear-gradient(to top, #2d5016 0%, #3a6b1f 30%, #4a7c2a 60%, #5a8f35 100%);
     z-index: 2;
 }
@@ -55,7 +55,7 @@ body {
     bottom: 0;
     left: 0;
     width: 100vw;
-    height: 10vh;
+    height: 8vh;
     z-index: 3;
     overflow: hidden;
 }
@@ -231,7 +231,7 @@ body {
 .sunflower {
     position: absolute;
     bottom: 0;
-    transform: scale(0.6);
+    transform: scale(0.7);
 }
 
 .sunflower--1 { animation: moving-flower-1 4s linear infinite; }
@@ -277,33 +277,33 @@ body {
 }
 
 @keyframes moving-flower-1 {
-    0%, 100% { transform: scale(0.6) rotate(-3deg) translateY(0); }
-    50% { transform: scale(0.6) rotate(3deg) translateY(-5px); }
+    0%, 100% { transform: scale(0.7) rotate(-3deg) translateY(0); }
+    50% { transform: scale(0.7) rotate(3deg) translateY(-5px); }
 }
 
 @keyframes moving-flower-2 {
-    0%, 100% { transform: scale(0.6) rotate(-4deg) translateY(0); }
-    50% { transform: scale(0.6) rotate(4deg) translateY(-6px); }
+    0%, 100% { transform: scale(0.7) rotate(-4deg) translateY(0); }
+    50% { transform: scale(0.7) rotate(4deg) translateY(-6px); }
 }
 
 @keyframes moving-flower-3 {
-    0%, 100% { transform: scale(0.6) rotate(-2deg) translateY(0); }
-    50% { transform: scale(0.6) rotate(2deg) translateY(-4px); }
+    0%, 100% { transform: scale(0.7) rotate(-2deg) translateY(0); }
+    50% { transform: scale(0.7) rotate(2deg) translateY(-4px); }
 }
 
 @keyframes moving-flower-4 {
-    0%, 100% { transform: scale(0.6) rotate(-3.5deg) translateY(0); }
-    50% { transform: scale(0.6) rotate(3.5deg) translateY(-7px); }
+    0%, 100% { transform: scale(0.7) rotate(-3.5deg) translateY(0); }
+    50% { transform: scale(0.7) rotate(3.5deg) translateY(-7px); }
 }
 
 @keyframes moving-flower-5 {
-    0%, 100% { transform: scale(0.6) rotate(-2.5deg) translateY(0); }
-    50% { transform: scale(0.6) rotate(2.5deg) translateY(-5px); }
+    0%, 100% { transform: scale(0.7) rotate(-2.5deg) translateY(0); }
+    50% { transform: scale(0.7) rotate(2.5deg) translateY(-5px); }
 }
 
 @keyframes moving-flower-6 {
-    0%, 100% { transform: scale(0.6) rotate(-3deg) translateY(0); }
-    50% { transform: scale(0.6) rotate(3deg) translateY(-6px); }
+    0%, 100% { transform: scale(0.7) rotate(-3deg) translateY(0); }
+    50% { transform: scale(0.7) rotate(3deg) translateY(-6px); }
 }
 
 .flower_wrapper {
@@ -315,8 +315,8 @@ body {
 
 .flower_stem {
     width: 2vmin;
-    height: 50vmin;
-    max-height: 200px;
+    height: 45vmin;
+    max-height: 180px;
     background-image: var(--line-color);
     border-radius: 4vmin;
     animation-delay: 0.3s;
@@ -329,9 +329,9 @@ body {
     z-index: 5;
     transform: translateX(-50%) rotate(-10deg);
     width: 20vmin;
-    max-width: 80px;
+    max-width: 90px;
     height: 20vmin;
-    max-height: 80px;
+    max-height: 90px;
     border-radius: 50%;
     background: var(--flower-center);
     animation: open-flower-middle 2s 0.4s backwards;
@@ -341,13 +341,13 @@ body {
     position: absolute;
     left: 50%;
     z-index: 3;
-    bottom: 40vmin;
-    max-bottom: 160px;
+    bottom: 35vmin;
+    max-bottom: 140px;
     transform: translateX(-50%);
     width: 7vmin;
-    max-width: 35px;
+    max-width: 40px;
     height: 20vmin;
-    max-height: 80px;
+    max-height: 90px;
     background: var(--petal-color);
     clip-path: ellipse(50% 50% at 50% 50%);
     transform-origin: center bottom;
@@ -376,13 +376,13 @@ body {
 .flower_leaf {
     position: absolute;
     left: 60%;
-    bottom: 12vmin;
-    max-bottom: 100px;
+    bottom: 10vmin;
+    max-bottom: 80px;
     transform: translateX(-45%) rotate(80deg);
     width: 7vmin;
-    max-width: 30px;
+    max-width: 35px;
     height: 17vmin;
-    max-height: 70px;
+    max-height: 75px;
     background: var(--leaf-color);
     clip-path: none;
     border-radius: 10vmin 2vmin 10vmin 2vmin;
@@ -390,21 +390,21 @@ body {
 }
 
 .flower_leaf-1 {
-    bottom: 12vmin;
-    max-bottom: 100px;
+    bottom: 10vmin;
+    max-bottom: 80px;
     transform: translateX(-45%) rotate(80deg);
 }
 
 .flower_leaf-2 {
-    bottom: 16vmin;
-    max-bottom: 130px;
+    bottom: 14vmin;
+    max-bottom: 110px;
     transform: translateX(-55%) rotate(-80deg);
 }
 
 .flower_light {
     position: absolute;
-    bottom: 50vmin;
-    max-bottom: 200px;
+    bottom: 45vmin;
+    max-bottom: 180px;
     width: 1vmin;
     height: 1vmin;
     background-color: rgb(255, 251, 0);

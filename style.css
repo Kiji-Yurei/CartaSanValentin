@@ -2173,57 +2173,71 @@ body {
     
     .card-open {
         width: 100%;
-        padding: 5px;
+        height: 100vh;
+        padding: 0;
     }
     
     .close-btn {
-        top: 1%;
-        right: 1%;
-        width: 30px;
-        height: 30px;
-        font-size: 1.1rem;
+        top: 8px;
+        right: 8px;
+        width: 36px;
+        height: 36px;
+        font-size: 1.4rem;
     }
     
     .letter-paper {
-        padding: 20px 10px;
+        padding: 45px 12px 15px 12px;
+        min-height: 100%;
     }
     
     .letter-title h1 {
-        font-size: 1.5rem;
-        margin-bottom: 15px;
+        font-size: 1.4rem;
+        margin-bottom: 12px;
+    }
+    
+    .letter-title h1::before,
+    .letter-title h1::after {
+        margin: 0 6px;
+        font-size: 1rem;
     }
     
     .message-box {
-        padding: 12px;
+        padding: 10px;
+        margin: 10px 0;
     }
     
     .image-box--side,
     .message-box--side {
-        min-height: 120px;
+        min-height: 100px;
     }
     
     .editable-text {
         font-size: 0.85rem;
         padding: 8px;
-        min-height: 60px;
+        min-height: 50px;
     }
     
     .editable-text--poem {
         font-size: 0.8rem;
-        min-height: 100px;
+        min-height: 90px;
     }
     
     .upload-label {
-        padding: 12px;
-        font-size: 0.8rem;
-    }
-    
-    .upload-text {
+        padding: 10px;
         font-size: 0.75rem;
     }
     
+    .upload-text {
+        font-size: 0.7rem;
+    }
+    
     .box-decoration {
-        font-size: 0.9rem;
+        font-size: 0.85rem;
+    }
+    
+    .content-row {
+        gap: 10px;
+        margin: 12px 0;
     }
     
     /* Flores más pequeñas en móviles pequeños */

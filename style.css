@@ -2309,18 +2309,48 @@ body {
     
     /* Flores más pequeñas en móviles pequeños */
     .sunflower {
-        transform: scale(0.4);
-        bottom: 22%;
+        transform: scale(0.35);
+        bottom: 28%;
     }
     
+    .sunflower--1 { left: 3%; }
+    .sunflower--2 { left: 18%; }
+    .sunflower--3 { left: 38%; }
+    .sunflower--4 { left: 58%; }
+    .sunflower--5 { left: 73%; }
+    .sunflower--6 { left: 88%; }
+    
     .flower_wrapper {
-        transform: translateX(-50%) scale(0.4);
-        bottom: 22%;
+        transform: translateX(-50%) scale(0.35);
+        bottom: 28%;
     }
     
     .flower_stem {
-        height: 25vmin;
-        max-height: 200px;
+        height: 18vmin !important;
+        max-height: 150px !important;
+    }
+    
+    .flower_petal {
+        bottom: 12vmin !important;
+        width: 3.5vmin !important;
+        max-width: 25px !important;
+        height: 10vmin !important;
+        max-height: 75px !important;
+    }
+    
+    .flower_center {
+        width: 10vmin !important;
+        max-width: 70px !important;
+        height: 10vmin !important;
+        max-height: 70px !important;
+    }
+    
+    .flower_leaf {
+        bottom: 10vmin !important;
+        width: 4vmin !important;
+        max-width: 28px !important;
+        height: 10vmin !important;
+        max-height: 75px !important;
     }
     
     body {
@@ -2335,11 +2365,11 @@ body {
     }
     
     .ground {
-        height: 25%;
+        height: 30%;
     }
     
     .grass-container {
-        height: 15%;
+        height: 18%;
     }
     
     .sunflowers {

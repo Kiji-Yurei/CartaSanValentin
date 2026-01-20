@@ -673,8 +673,7 @@ body {
 
 .sunflower {
     position: absolute;
-    bottom: 15%;
-    max-height: 85vh;
+    bottom: 0;
 }
 
 .sunflower--1 {
@@ -769,16 +768,13 @@ body {
 .flower_wrapper {
     position: absolute;
     left: 50%;
-    bottom: 15%;
+    bottom: 2vmin;
     transform: translateX(-50%);
-    max-height: 85vh;
-    overflow: visible;
 }
 
 .flower_stem {
     width: 2vmin;
-    height: 50vmin;
-    max-height: 400px;
+    height: 65vmin;
     background-image: var(--line-color);
     border-radius: 4vmin;
     animation-delay: 0.3s;
@@ -801,12 +797,10 @@ body {
     position: absolute;
     left: 50%;
     z-index: 3;
-    bottom: 45vmin;
+    bottom: 55vmin;
     transform: translateX(-50%);
     width: 7vmin;
-    max-width: 50px;
     height: 20vmin;
-    max-height: 150px;
     background: var(--petal-color);
     clip-path: ellipse(50% 50% at 50% 50%);
     transform-origin: center bottom;
@@ -867,17 +861,14 @@ body {
 .flower_leaf {
     position: absolute;
     left: 60%;
-    bottom: 15vmin;
+    bottom: 18vmin;
     transform: translateX(-45%) rotate(80deg);
     width: 7vmin;
-    max-width: 50px;
     height: 17vmin;
-    max-height: 120px;
     background: var(--leaf-color);
     clip-path: none;
     border-radius: 10vmin 2vmin 10vmin 2vmin;
     transform-origin: center bottom;
-}
 
 .flower_leaf-1 {
     bottom: 18vmin;
@@ -1994,7 +1985,7 @@ body {
     }
 }
 
-/* Responsive - Móviles */
+/* Responsive - Móviles - TODO AJUSTADO PARA VIEWPORT SIN SCROLLS */
 @media (max-width: 768px) {
     .card-closed {
         width: 90%;
@@ -2130,108 +2121,113 @@ body {
         font-size: 1.2rem;
     }
     
-    /* Ajustes para flores en móvil */
-    .sunflower {
-        transform: scale(0.4);
-        bottom: 25%;
-    }
-    
-    .sunflower--1 { left: 5%; }
-    .sunflower--2 { left: 20%; }
-    .sunflower--3 { left: 40%; }
-    .sunflower--4 { left: 60%; }
-    .sunflower--5 { left: 75%; }
-    .sunflower--6 { left: 90%; }
-    
-    .flower_wrapper {
-        transform: translateX(-50%) scale(0.4);
-        bottom: 25%;
-    }
-    
-    .flower_stem {
-        height: 20vmin !important;
-        max-height: 180px !important;
-    }
-    
-    .flower_petal {
-        bottom: 15vmin !important;
-        width: 4vmin !important;
-        max-width: 30px !important;
-        height: 12vmin !important;
-        max-height: 90px !important;
-    }
-    
-    .flower_center {
-        width: 12vmin !important;
-        max-width: 85px !important;
-        height: 12vmin !important;
-        max-height: 85px !important;
-    }
-    
-    .flower_leaf {
-        bottom: 12vmin !important;
-        width: 5vmin !important;
-        max-width: 35px !important;
-        height: 12vmin !important;
-        max-height: 90px !important;
-    }
-    
-    .ground {
-        height: 30%;
-    }
-    
-    .grass-container {
-        height: 18%;
-    }
-    
-    .sunflowers {
-        height: 100vh;
-        overflow: visible;
-    }
-    
-    .card-closed {
-        z-index: 101;
-        position: relative;
-    }
-    
-    .grass-blade {
-        width: 3px;
-    }
-    
-    .grass-blade--1,
-    .grass-blade--2,
-    .grass-blade--3 {
-        height: 30px;
-    }
-    
-    .card-overlay {
-        padding: 0;
-    }
-    
-    .shooting-star {
-        display: none; /* Ocultar estrellas fugaces en móvil para mejor rendimiento */
-    }
-    
-    body.card-open-active {
-        overflow: hidden;
-        height: 100vh;
+    /* SIN SCROLLS - TODO DENTRO DEL VIEWPORT */
+    body {
+        overflow: hidden !important;
+        height: 100vh !important;
+        width: 100% !important;
+        position: fixed !important;
+        touch-action: none;
+        -webkit-overflow-scrolling: none;
     }
     
     .container {
-        height: 100vh;
-        padding: 0;
+        height: 100vh !important;
+        width: 100vw !important;
+        padding: 0 !important;
+        margin: 0 !important;
         flex-shrink: 0;
+        overflow: hidden !important;
+        position: relative;
     }
     
-    body {
-        overflow: hidden;
-        height: 100vh;
-        width: 100%;
-        position: fixed;
+    /* Fondo ajustado al viewport */
+    .night {
+        height: 100vh !important;
+        width: 100vw !important;
+    }
+    
+    .ground {
+        height: 35% !important;
+    }
+    
+    .grass-container {
+        height: 20% !important;
+    }
+    
+    /* Flores más pequeñas y centradas - TODO DENTRO DEL VIEWPORT */
+    .sunflowers {
+        height: 100vh !important;
+        width: 100vw !important;
+        overflow: hidden !important;
+    }
+    
+    .sunflower {
+        transform: scale(0.35) !important;
+        bottom: 30% !important;
+    }
+    
+    .sunflower--1 { left: 3% !important; }
+    .sunflower--2 { left: 20% !important; }
+    .sunflower--3 { left: 40% !important; }
+    .sunflower--4 { left: 60% !important; }
+    .sunflower--5 { left: 77% !important; }
+    .sunflower--6 { left: 94% !important; }
+    
+    .flower_wrapper {
+        transform: translateX(-50%) scale(0.35) !important;
+        bottom: 30% !important;
+    }
+    
+    .flower_stem {
+        height: 18vmin !important;
+        max-height: 140px !important;
+    }
+    
+    .flower_petal {
+        bottom: 12vmin !important;
+        width: 3.5vmin !important;
+        max-width: 25px !important;
+        height: 10vmin !important;
+        max-height: 70px !important;
+    }
+    
+    .flower_center {
+        width: 10vmin !important;
+        max-width: 70px !important;
+        height: 10vmin !important;
+        max-height: 70px !important;
+    }
+    
+    .flower_leaf {
+        bottom: 10vmin !important;
+        width: 4vmin !important;
+        max-width: 28px !important;
+        height: 10vmin !important;
+        max-height: 70px !important;
+    }
+    
+    /* Carta centrada */
+    .card-closed {
+        z-index: 101;
+        position: relative;
+        margin: 0 auto;
+    }
+    
+    .grass-blade {
+        width: 2px !important;
+    }
+    
+    .shooting-star {
+        display: none !important;
+    }
+    
+    .card-overlay {
+        padding: 0 !important;
     }
 }
 
-/* Responsive - Móviles pequeños */
+/* Responsive - Móviles pequeños - MISMOS AJUSTES */
 @media (max-width: 480px) {
     .card-closed {
         width: 95%;
@@ -2307,83 +2303,104 @@ body {
         margin: 12px 0;
     }
     
-    /* Flores más pequeñas en móviles pequeños */
-    .sunflower {
-        transform: scale(0.35);
-        bottom: 28%;
-    }
-    
-    .sunflower--1 { left: 3%; }
-    .sunflower--2 { left: 18%; }
-    .sunflower--3 { left: 38%; }
-    .sunflower--4 { left: 58%; }
-    .sunflower--5 { left: 73%; }
-    .sunflower--6 { left: 88%; }
-    
-    .flower_wrapper {
-        transform: translateX(-50%) scale(0.35);
-        bottom: 28%;
-    }
-    
-    .flower_stem {
-        height: 18vmin !important;
-        max-height: 150px !important;
-    }
-    
-    .flower_petal {
-        bottom: 12vmin !important;
-        width: 3.5vmin !important;
-        max-width: 25px !important;
-        height: 10vmin !important;
-        max-height: 75px !important;
-    }
-    
-    .flower_center {
-        width: 10vmin !important;
-        max-width: 70px !important;
-        height: 10vmin !important;
-        max-height: 70px !important;
-    }
-    
-    .flower_leaf {
-        bottom: 10vmin !important;
-        width: 4vmin !important;
-        max-width: 28px !important;
-        height: 10vmin !important;
-        max-height: 75px !important;
-    }
-    
+    /* MISMOS AJUSTES QUE MÓVIL NORMAL - TODO DENTRO DEL VIEWPORT */
     body {
-        overflow: hidden;
-        height: 100vh;
-        width: 100%;
-        position: fixed;
+        overflow: hidden !important;
+        height: 100vh !important;
+        width: 100% !important;
+        position: fixed !important;
+        touch-action: none;
     }
     
     .container {
-        flex-shrink: 0;
+        height: 100vh !important;
+        width: 100vw !important;
+        padding: 0 !important;
+        margin: 0 !important;
+        overflow: hidden !important;
     }
     
     .ground {
-        height: 30%;
+        height: 35% !important;
     }
     
     .grass-container {
-        height: 18%;
+        height: 20% !important;
     }
     
     .sunflowers {
-        height: 100vh;
-        overflow: visible;
+        height: 100vh !important;
+        width: 100vw !important;
+        overflow: hidden !important;
+    }
+    
+    .sunflower {
+        transform: scale(0.3) !important;
+        bottom: 32% !important;
+    }
+    
+    .sunflower--1 { left: 2% !important; }
+    .sunflower--2 { left: 18% !important; }
+    .sunflower--3 { left: 38% !important; }
+    .sunflower--4 { left: 62% !important; }
+    .sunflower--5 { left: 78% !important; }
+    .sunflower--6 { left: 96% !important; }
+    
+    .flower_wrapper {
+        transform: translateX(-50%) scale(0.3) !important;
+        bottom: 32% !important;
+    }
+    
+    .flower_stem {
+        height: 16vmin !important;
+        max-height: 120px !important;
+    }
+    
+    .flower_petal {
+        bottom: 10vmin !important;
+        width: 3vmin !important;
+        max-width: 22px !important;
+        height: 9vmin !important;
+        max-height: 65px !important;
+    }
+    
+    .flower_center {
+        width: 9vmin !important;
+        max-width: 65px !important;
+        height: 9vmin !important;
+        max-height: 65px !important;
+    }
+    
+    .flower_leaf {
+        bottom: 8vmin !important;
+        width: 3.5vmin !important;
+        max-width: 25px !important;
+        height: 9vmin !important;
+        max-height: 65px !important;
     }
     
     .grass-blade {
-        width: 2px;
+        width: 2px !important;
     }
 }
 
-/* Responsive - Orientación horizontal en móviles */
+/* Responsive - Orientación horizontal en móviles - IGUAL QUE MÓVIL VERTICAL */
 @media (max-width: 768px) and (orientation: landscape) {
+    /* Mismos ajustes que móvil vertical */
+    body {
+        overflow: hidden !important;
+        height: 100vh !important;
+        width: 100% !important;
+        position: fixed !important;
+        touch-action: none;
+    }
+    
+    .container {
+        height: 100vh !important;
+        width: 100vw !important;
+        overflow: hidden !important;
+    }
+    
     .card-open {
         max-height: 95vh;
     }
@@ -2403,7 +2420,15 @@ body {
     }
 }
 
-/* Ajustes para pantallas muy grandes */
+/* Ajustes para pantallas grandes - MÁS GRANDE QUE MÓVIL */
+@media (min-width: 769px) {
+    /* En PC todo se ve más grande, manteniendo el diseño base */
+    .card-closed {
+        width: 450px;
+        height: 320px;
+    }
+}
+
 @media (min-width: 1920px) {
     .card-closed {
         width: 500px;

@@ -8,25 +8,24 @@ body {
     font-family: 'Georgia', serif;
     overflow-x: hidden;
     overflow-y: auto;
-    min-height: 100vh;
+    height: 100vh;
     position: relative;
     -webkit-overflow-scrolling: touch;
 }
 
 .container {
     width: 100%;
-    min-height: 100vh;
+    height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
     position: relative;
-    overflow-x: hidden;
-    padding: 20px 0;
+    overflow: hidden;
 }
 
 /* Cielo nocturno */
 .night {
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
     width: 100%;
@@ -37,7 +36,7 @@ body {
 
 /* Piso verde */
 .ground {
-    position: absolute;
+    position: fixed;
     bottom: 0;
     left: 0;
     width: 100%;
@@ -49,7 +48,7 @@ body {
 
 /* Contenedor de pasto */
 .grass-container {
-    position: absolute;
+    position: fixed;
     bottom: 0;
     left: 0;
     width: 100%;
@@ -659,12 +658,13 @@ body {
 }
 
 .sunflowers {
-    position: absolute;
+    position: fixed;
     bottom: 0;
     left: 0;
     width: 100%;
     height: 100%;
     z-index: 4;
+    pointer-events: none;
 }
 
 .sunflower {
@@ -1991,26 +1991,35 @@ body {
     }
     
     .card-open {
-        width: 98%;
+        width: 100%;
         max-width: 100%;
-        max-height: 90vh;
-        top: 50%;
-        left: 50%;
-        padding: 10px;
+        height: 100vh;
+        max-height: 100vh;
+        top: 0;
+        left: 0;
+        transform: translate(0, 0);
+        padding: 0;
+        border-radius: 0;
     }
     
     .close-btn {
-        top: 2%;
-        right: 2%;
-        width: 35px;
-        height: 35px;
-        font-size: 1.3rem;
+        top: 10px;
+        right: 10px;
+        width: 40px;
+        height: 40px;
+        font-size: 1.5rem;
         z-index: 1001;
+        background: rgba(255, 255, 255, 0.9);
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
     }
     
     .letter-paper {
-        padding: 25px 15px;
-        min-height: auto;
+        padding: 50px 15px 20px 15px;
+        min-height: 100%;
+        height: auto;
+        max-height: 100vh;
+        overflow-y: auto;
+        -webkit-overflow-scrolling: touch;
     }
     
     .letter-paper::before {
@@ -2019,8 +2028,14 @@ body {
     }
     
     .letter-title h1 {
-        font-size: 1.8rem;
-        margin-bottom: 20px;
+        font-size: 1.6rem;
+        margin-bottom: 15px;
+    }
+    
+    .letter-title h1::before,
+    .letter-title h1::after {
+        margin: 0 8px;
+        font-size: 1.2rem;
     }
     
     .images-section {
@@ -2031,8 +2046,8 @@ body {
     
     .content-row {
         grid-template-columns: 1fr !important;
-        gap: 15px;
-        margin: 20px 0;
+        gap: 12px;
+        margin: 15px 0;
     }
     
     .content-row--text-image {
@@ -2044,34 +2059,38 @@ body {
     }
     
     .message-box {
-        padding: 15px;
+        padding: 12px;
         min-height: auto;
+        margin: 12px 0;
     }
     
     .image-box--side,
     .message-box--side {
-        min-height: 150px;
-    }
-    
-    .message-box--dedication {
-        min-height: 100px;
-        margin-top: 20px;
-    }
-    
-    .editable-text {
-        font-size: 0.95rem;
-        padding: 10px;
-        min-height: 80px;
-    }
-    
-    .editable-text--poem {
-        font-size: 0.9rem;
         min-height: 120px;
     }
     
-    .editable-text--dedication {
-        font-size: 1rem;
+    .message-box--dedication {
         min-height: 80px;
+        margin-top: 15px;
+    }
+    
+    .editable-text {
+        font-size: 0.9rem;
+        padding: 8px;
+        min-height: 60px;
+        line-height: 1.4;
+    }
+    
+    .editable-text--poem {
+        font-size: 0.85rem;
+        min-height: 100px;
+        line-height: 1.5;
+    }
+    
+    .editable-text--dedication {
+        font-size: 0.95rem;
+        min-height: 60px;
+        line-height: 1.4;
     }
     
     .upload-label {
@@ -2088,7 +2107,11 @@ body {
     }
     
     .paper-decoration {
-        margin: 15px 0;
+        margin: 10px 0;
+    }
+    
+    .letter-content {
+        padding-bottom: 20px;
     }
     
     .decoration-heart {
@@ -2123,11 +2146,21 @@ body {
     }
     
     .card-overlay {
-        padding: 10px;
+        padding: 0;
     }
     
     .shooting-star {
         display: none; /* Ocultar estrellas fugaces en móvil para mejor rendimiento */
+    }
+    
+    body.card-open-active {
+        overflow: hidden;
+        height: 100vh;
+    }
+    
+    .container {
+        height: 100vh;
+        padding: 0;
     }
 }
 

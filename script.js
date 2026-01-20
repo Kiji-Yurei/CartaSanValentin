@@ -15,8 +15,13 @@ cardClosed.addEventListener('click', () => {
     cardOverlay.style.display = 'block';
     cardOpen.style.display = 'block';
     document.body.style.overflow = 'hidden';
+    document.body.style.height = '100vh';
+    document.body.style.position = 'fixed';
+    document.body.style.width = '100%';
     setTimeout(() => {
-        editableText.focus();
+        if (editableText && editableText.hasAttribute('contenteditable')) {
+            editableText.focus();
+        }
     }, 500);
 });
 
@@ -25,7 +30,10 @@ function closeCard() {
     cardOpen.style.display = 'none';
     cardOverlay.style.display = 'none';
     cardClosed.style.display = 'block';
-    document.body.style.overflow = 'auto';
+    document.body.style.overflow = '';
+    document.body.style.height = '';
+    document.body.style.position = '';
+    document.body.style.width = '';
 }
 
 closeBtn.addEventListener('click', (e) => {
